@@ -32,15 +32,16 @@ echo "<script type='text/javascript'>alert('Enrolment ID already registered. Ple
  die("Enrolment ID already registered. Please login with your enrolment id and registered password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href='home_page.php'><button>Back</button></a>");
 }  
 $n=$_POST['t1'];
-$e=$_POST['t2'];
 $cp=$_POST['t3'];
 $cmp=$_POST['t4'];
 $pn=$_POST['t5'];
 
 
+
 $_SESSION['password'] = $cp;
 
-$qr="insert into student_details(name, phone, email, password, eid) values('".$n."','".$pn."','".$e."','".$cp."','".$eid."')";
+$qr="insert into student_details(name, phone, password, eid) values('".$n."','".$pn."','".$cp."','".$eid."')";
+
 $conn->query($qr);
 header("location:completeregis.php");
 }
@@ -164,7 +165,7 @@ echo "<script type='text/javascript'>alert('Sorry!! wrong username or password..
                             <input name="tt2" type="password" required />
                         </div>
 
-                        <p class="forgot"><a href="#">Forgot Password?</a></p>
+                        <p class="forgot"><a href="forgotpw.php">Forgot Password?</a></p>
 
                         <input type="submit" value="Login" name="s2" class="button button-block" />
 

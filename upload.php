@@ -42,7 +42,7 @@ while($row=$result->fetch_row())
 $maxlimit=$row[3];
 
 }
-if ($studentnum >= $maxlimit) {
+if ($studentnum > $maxlimit) {
 
     echo "<script type='text/javascript'>alert('Sorry no more place to register in this course for this semester. Kindly check the course and semester details before registering')</script>";
 die("Sorry no more place to register in this course for this semester. Kindly check the course and semester details before registering &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type='button' onclick='javascript:history.back()'>Back</button>");
@@ -148,13 +148,13 @@ $pdf->SetRightMargin(20);
 
 $pdf->AddPage();
 $pdf->Write(5, "Your registration has been done successfully. Please find your details below. You may login into the system using your Enrolment ID and password"); //write
-//$pdf->Image($target_dir . $newfilename,25,25,30);
+/*$pdf->Image($target_dir . $newfilename,25,25,30);
 
     $pdf->Ln(10); // new line
     $pdf->Ln(10); // new line
     $pdf->Ln(10); // new line
     $pdf->Ln(10); // new line
-    $pdf->Ln(10); // new line
+    $pdf->Ln(10); // new line */
     $pdf->Ln(10); // new line
 
 	$pdf->Write(5, "Enrolment ID: $eid"); //write

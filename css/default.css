@@ -169,6 +169,16 @@ form.register input[type=text]
     border: 1px solid #E1E1E1;
     height: 18px;
 }
+form.register input[type=email]
+{
+    border: 1px solid #E1E1E1;
+    height: 18px;
+}
+form.register input[type=number]
+{
+    border: 1px solid #E1E1E1;
+    height: 18px;
+}
 form.register input[type=password]
 {
     border: 1px solid #E1E1E1;

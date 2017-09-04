@@ -30,6 +30,8 @@ $nationality=$row[14];
 $course=$row[11];
 $sem=$row[10];
 $addr=$row[5];
+$name=$row[2];
+$phone=$row[3];
 }
 $imagepath='uploads/'. $eid . '.jpg';
 }
@@ -45,7 +47,20 @@ $imagepath='uploads/'. $eid . '.jpg';
                     <label>Enrollment ID *
                     </label>
                     <input type="text" name="eid" value="<?= $eid ?>" />
-
+					</p>
+								
+					<label>Name *
+                    </label>
+                    <input type="text" name="eid" value="<?= $name ?>" />
+					
+					
+<p>
+					<label>Contact *
+                    </label>
+                    <input type="text" name="eid" value="<?= $phone ?>" />
+					</p>
+					
+<p>
                     <img src="<?= $imagepath ?>" alt="" height="120px" style="float:right;" />
                     <label>Change Image?</label> <br/><br/><input type="file" name="fileToUpload" id="fileToUpload" onchange="check(this)" style="float:right;">
                 </p>
@@ -88,11 +103,11 @@ $imagepath='uploads/'. $eid . '.jpg';
 
 
                 </p>
-                <p>
+                
                     <label>Hostel ID *
                     </label>
                     <input type="text" name="hostelid" maxlength="10" value="<?= $hostelid ?>" required/>
-                </p>
+                
             </fieldset>
             <fieldset class="row2">
                 <legend>Personal Details

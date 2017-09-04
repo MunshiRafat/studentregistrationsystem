@@ -19,7 +19,7 @@ else
 {
 $cid = $_SESSION['cid'];
 $sem = $_SESSION['sem'];
-$result=$conn->query("select * from student_details where cid='".$cid."'");
+$result=$conn->query("select * from student_details where cid='".$cid."' AND sem='".$sem."'");
 
 if (($result)||(mysql_errno == 0))
 {
@@ -39,9 +39,10 @@ while ($fieldinfo=mysqli_fetch_field($result))
       {
         echo "<td align='center'>". $data . "</td>";
       }
-    }
-	$imagepath='uploads/'. $eid . '.jpg';
+	  $imagepath='uploads/'. $eid . '.jpg';
 	echo "<td align='center'><img src='$imagepath' alt='' height='120px'/></td>";
+    }
+	
   }else{
     echo "<tr><td colspan='" . ($i+1) . "'>No Results found!</td></tr>";
   }

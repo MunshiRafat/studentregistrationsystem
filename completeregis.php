@@ -6,7 +6,11 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="css/default.css" />
 </head>
+<?php
 
+session_start();
+$password = $_SESSION['password'];
+?>
 <body>
     <form action="upload.php" method="post" enctype="multipart/form-data" class="register">
         <h1>Other details</h1>
@@ -144,22 +148,32 @@ while (($row=$res->fetch_row()) != null)
                          <option value="">SELECT
                         </option>
 					
-						 <option value="1">I
+					    <?php
+			if(date('m', strtotime('-1 month'))+1>=6 && date('m', strtotime('-1 month'))+1<=12){?>
+                    <option value="1">I
                         </option>
-                        <option value="2">II
+						<option value="3">III
                         </option>
-						 <option value="3">III
-                        </option>
-						 <option value="4">IV
-                        </option>
-						 <option value="5">V
-                        </option>
-						 <option value="6">VI
+						<option value="5">V
                         </option>
 						 <option value="7">VII
                         </option>
+                    <?php }else{?>
+                       <option value="2">II
+                        </option>
+						 
+						 <option value="4">IV
+                        </option>
+						 
+						 <option value="6">VI
+                        </option>
+						
 						 <option value="8">VIII
                         </option>
+                    <?php } ?>
+					
+						 
+                     
                     </select>
             </p>
             <p class="agreement">
@@ -173,7 +187,12 @@ while (($row=$res->fetch_row()) != null)
 
             <div>
 			
+                <?php
+			if($password=="amu_reg"){?>
+                    <button class="button" onClick="document.location.href='admin_page.php'">Back</button>
+                    <?php }else{?>
                     <button class="button" onClick="document.location.href='home_page.php'">Back</button>
+                    <?php } ?>
                    
 					</div>
         </div>
